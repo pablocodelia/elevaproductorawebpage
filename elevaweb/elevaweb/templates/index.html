@@ -1,0 +1,597 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load cms_tags %}
+
+
+
+{% block content %}
+
+            <div class="container-fluid hero-header fondo1">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">Eleva Productora</h1>
+                            <p class="text-white pb-3 animated slideInDown">Somos productora audiovisual que se dedica a ayudar a las empresas a alcanzar sus objetivos de negocio a través de la creación de contenido digital de alta calidad. Ofrecemos una amplia gama de servicios, incluyendo gestión de redes sociales, diseño y desarrollo web, y producción audiovisual.</p>
+                            <a href="#nosotros" class="btn btn1 py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Nosotros</a>
+                            <a href="#servicios" class="btn btn1 py-sm-3 px-sm-5 rounded-pill animated slideInRight">Servicios</a>
+                        </div>
+                        
+                        <!-- Contacto Hero Start -->
+                            
+                        <div class="wow fadeInUp col-lg-6 text-center text-lg-start" data-wow-delay="0.3s" id="heroform">
+                            <h2 class="text-center text-white mb-4">Contacto</h2>
+                            <form method="POST" action="{% url 'enviar' %}">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Tu nombre" name="nombre">
+                                            <label for="name">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Tu Correo" name="email" required>
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>                        
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Escriba su mensaje acá" id="message" style="height: 150px" name="mensaje"></textarea>
+                                            <label for="message">Mensaje</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn1 w-100 py-3" type="submit">Enviar mensaje</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                                        
+                        <!-- Contacto Hero End -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Feature Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-4">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="feature-item fondoblanco rounded text-center p-4">
+                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
+                            <h5 class="mb-3">Marketing Digital</h5>
+                            <p class="m-0">Optimización de canales digitales, como sitios web, redes sociales y correo electrónico, para llegar a los clientes y promover productos o servicios.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item fondoblanco rounded text-center p-4">
+                            <i class="fa fa-3x fa-file-video text-primary mb-4"></i>
+                            <h5 class="mb-3">Producción Audiovisual</h5>
+                            <p class="m-0">Somos expertos en la realización de Videos, Música y Fotografía.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-item fondoblanco rounded text-center p-4">
+                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
+                            <h5 class="mb-3">Diseño y Desarrollo</h5>
+                            <p class="m-0">Desarrollo web a la medida, diseño de marca, producto y de contenido digital para tu marca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
+
+
+        <!-- Nosotros Start -->
+        <div class="container-xxl py-5" id='nosotros'>
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="section-title text-secondary">Nosotros<span></span></p>
+                        <h1 class="mb-5">Eleva Productora</h1>
+                        <p class="mb-4">Productora audiovisual que se dedica a la digitalización de empresas. Somos un equipo de profesionales apasionados por el audiovisual y nos encanta ayudar a nuestros clientes a alcanzar sus objetivos de negocio.
+
+                            Ofrecemos una amplia gama de servicios, incluyendo gestión de redes sociales, diseño y desarrollo web, y producción audiovisual. Todos nuestros proyectos son personalizados y adaptados a las necesidades específicas de nuestros clientes.</p>
+                        
+                        <a href="#" class="btn btn2 py-sm-3 px-sm-5 rounded-pill mt-3">Leer Más</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src='{% static "img/about.png" %}'>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nosotros End -->
+
+
+        <!-- Facts Start -->
+        {% comment %} <div class="container-fluid bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                        <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                        <p class="text-white mb-0">Years Experience</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                        <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                        <p class="text-white mb-0">Team Members</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                        <i class="fa fa-users fa-3x text-secondary mb-3"></i>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                        <p class="text-white mb-0">Satisfied Clients</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                        <i class="fa fa-check fa-3x text-secondary mb-3"></i>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                        <p class="text-white mb-0">Compleate Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <!-- Facts End -->
+
+
+        <!-- Servicios Start -->
+        <div class="container-xxl py-5" id='servicios'>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>Servicios<span></span></p>
+                    <h1 class="text-center mb-5">Las Soluciones que Ofrecemos </h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-search fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">SEO y SEM</h5>
+                            <p class="m-0">Ayudamos a tu negocio a aparecer en la parte superior de los resultados de búsqueda para que puedas llegar a más clientes.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-laptop-code fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Diseño Web</h5>
+                            <p class="m-0">Creamos sitios web de alta calidad que se adapten a las necesidades de tu negocio.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fab fa-facebook-f fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Social Media</h5>
+                            <p class="m-0">Nos encargamos de gestionar tu presencia en las redes sociales, creando contenido atractivo, interactuando con tus seguidores y midiendo los resultados de nuestras acciones.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-mail-bulk fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Email Marketing</h5>
+                            <p class="m-0">Creamos y enviamos campañas de email marketing personalizadas y segmentadas para mantener a tus clientes informados y comprometidos con tu marca.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-photo-video fa-2x" style="color: #ffffff;"></i>
+                            </div>
+                            <h5 class="mb-3">Publicidad Web</h5>
+                            <p class="m-0">Creamos y gestionamos campañas de publicidad en línea para ayudarte a llegar a más clientes.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-film fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Video</h5>
+                            <p class="m-0">Realizamos todo tipo de producciones audiovisuales, incluyendo vídeos corporativos, vídeos de producto, vídeos de marketing y vídeos de eventos.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-headphones fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Producción Musical</h5>
+                            <p class="m-0">Creamos música original para tu negocio, incluyendo jingles, piezas musicales y bandas sonoras.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-pencil-ruler fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Diseño de Marca</h5>
+                            <p class="m-0">Creamos identidades de marca únicas y memorables que ayuden a tu negocio a destacar de la competencia.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-camera fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Fotografía</h5>
+                            <p class="m-0">Realizamos sesiones de fotos profesionales para tu negocio, incluyendo fotografías de productos, eventos y personas.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Servicios End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-fluid fondo1 newsletter py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <p class="section-title text-white justify-content-center"><span></span>Newsletter<span></span></p>
+                        <h1 class="text-center text-white mb-4">Estemos en contacto</h1>
+                        <p class="text-white mb-4">Puedes suscribirte a nuestro newsletter para recibir información sobre nuestros últimos trabajos, noticias del sector y consejos para la digitalización de empresas.</p>
+                        <form method="POST" action="{% url 'newsletter' %}" class="position-relative w-100 mt-3">
+                            {% csrf_token %}
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Ingresa tu email" style="height: 48px;" name='email' required>
+                            <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Portafolio Start -->
+        <div class="container-xxl py-5" id='portafolio'>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>Portafolio<span></span></p>
+                    <h1 class="text-center mb-5">Proyectos Recientes</h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="mx-2 active" data-filter="*">Todos</li>
+                            <li class="mx-2" data-filter=".disenoweb">Diseño Web</li>
+                            <li class="mx-2" data-filter=".disenograf">Diseño Gráfico</li>
+                            <li class="mx-2" data-filter=".video">Video</li>
+                            <li class="mx-2" data-filter=".cuarto">Producción Musical</li>
+                            <li class="mx-2" data-filter=".quinto">Fotografía</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item disenoweb wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-1.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-1.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="https://bodegascentrales.cl/" target="_blank" ><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">Desarrollo Web</p>
+                                <h5 class="lh-base mb-0">Bodegas Centrales</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item disenoweb wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-2.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-2.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="https://potenciatumate.cl/" target="_blank"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">Desarrollo Web</p>
+                                <h5 class="lh-base mb-0">Potencia tu Mate</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item disenoweb wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-3.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-3.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="https://grupomsgchile.cl/" target="_blank"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">Desarrollo Web</p>
+                                <h5 class="lh-base mb-0">Grupo MSG</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item disenograf wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-4.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-4.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="" target="_blank"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item disenograf wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-5.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-5.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="" target="_blank"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item video wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src='{% static "img/portfolio-6.jpg" %}' alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href='{% static "img/portfolio-6.jpg" %}' data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="" target="_blank"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4">
+                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portafolio End -->
+
+        <!-- RRSS Start -->
+        <div class="container-xxl py-5" id='redes'>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInLeft" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>RRSS<span></span></p>
+                    <h1 class="text-center mb-5">Instagram</h1>
+                </div>
+                {% block rrss  %}
+                    {% placeholder 'social' %}
+                {% endblock %}
+                {% comment %} <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-search fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">SEO Optimization</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-laptop-code fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Web Design</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fab fa-facebook-f fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Social Media Marketing</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-mail-bulk fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Email Marketing</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-thumbs-up fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">PPC Advertising</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fab fa-android fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">App Development</h5>
+                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <!-- RRSS End -->
+
+
+        <!-- Clientes Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id='clientes'>
+            <div class="container py-5 px-lg-5">
+                <p class="section-title text-secondary justify-content-center"><span></span>Clientes<span></span></p>
+                <h1 class="text-center mb-5">Que dicen nuestros clientes</h1>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src='{% static "img/testimonial-1.jpg" %}' style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Sadie Ponce</h5>
+                                <i class="fab fa-instagram"></i><span>sadieponce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Con Eleva Productora cumplimos nuestros objetivos gracias a campañas bien implementadas.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src='{% static "img/testimonial-2.jpg" %}' style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Mateo Sanchez</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src='{% static "img/testimonial-3.jpg" %}' style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Clientes End -->
+
+
+        <!-- Equipo Start -->
+        <div class="container-xxl py-5" id='equipo'>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>El Equipo<span></span></p>
+                    <h1 class="text-center mb-5">Miembros:</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light rounded">
+                            <div class="text-center border-bottom p-4">
+                                <img class="img-fluid rounded-circle mb-4" src='{% static "img/team-1.jpg" %}' alt="">
+                                <h5>Gabriela Ulloa</h5>
+                                <span>CEO, Marketing, Diseño</span>
+                            </div>
+                            <div class="d-flex justify-content-center p-4">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href="https://www.instagram.com/gabrielaulloafotos/"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light rounded">
+                            <div class="text-center border-bottom p-4">
+                                <img class="img-fluid rounded-circle mb-4" src='{% static "img/team-2.jpg" %}' alt="">
+                                <h5>Pablo Codelia</h5>
+                                <span>Productor Musical, Desarrollador Web</span>
+                            </div>
+                            <div class="d-flex justify-content-center p-4">
+                                <a class="btn btn-square mx-1" href="https://github.com/pablocodelia"><i class="fab fa-github"></i></a>
+                                <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/pablo-codelia-b388a1109/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-square mx-1" href="https://soundcloud.com/pablo-codelia"><i class="fab fa-soundcloud"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Equipo End -->
+
+
+
+        <!-- Contacto Start -->
+        <div class="container-fluid py-5" id='contacto'>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>Contacto<span></span></p>
+                    <h1 class="text-center mb-5">Formulario</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="wow fadeInUp" data-wow-delay="0.3s">
+                            <p class="text-center mb-4">Si tienes alguna pregunta o consulta, no dudes en contactarnos. Estaremos encantados de ayudarte.</p>
+                            <form method="POST" action="{% url 'enviar' %}">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Nombre">
+                                            <label for="name">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                            <label for="message">Mensaje</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn1 w-100 py-3" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contacto End -->
+
+        
+        
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    {% endblock content %}

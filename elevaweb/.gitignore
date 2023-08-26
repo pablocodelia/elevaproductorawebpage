@@ -1,0 +1,18 @@
+
+
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+
+# Local development settings
+*.sqlite3
+*.pyc
+
+# Media and static files
+media/
+static/
+
+# security
+.env

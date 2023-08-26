@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block form %}
+
+<form action="/enviar" method="post">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
+                <label for="name">Nombre</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Escriba su mensaje aquí" id="message" style="height: 150px" name="message"></input>
+                <label for="message">Mensaje</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
+        </div>
+    </div>
+
+    {{ contacto }}
+</form>
+
+
+
+{% endblock form %}
